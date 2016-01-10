@@ -1,0 +1,1 @@
+angular.module('blocJams', []); // blocJams is the name of the module. The empty array injects dependencies into the application.
