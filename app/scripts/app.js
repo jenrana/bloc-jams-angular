@@ -1,1 +1,22 @@
-angular.module('blocJams', []); // blocJams is the name of the module. The empty array injects dependencies into the application.
+ (function() {
+     function config($stateProvider, $locationProvider) {
+        $locationProvider
+         .html5Mode({
+             enabled: true,
+             requireBase: false
+         });
+        $stateProvider
+         .state('landing', {
+             url: '/',
+             templateUrl: '/templates/landing.html'
+         })
+         .state('album', {
+             url: '/album',
+             templateUrl: '/templates/album.html'
+         });
+     }
+
+     angular
+         .module('blocJams', ['ui.router'])
+         .config(config);
+ })();
