@@ -64,6 +64,12 @@
         * @type {Object}
         */
         SongPlayer.currentSong = null;
+          
+        /**
+        * @desc album object 
+        * @type {Object}
+        */
+        SongPlayer.albumData = Fixtures.getAlbum();
          
         /**
         * @function play
