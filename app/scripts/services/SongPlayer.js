@@ -83,6 +83,12 @@
         SongPlayer.albumData = Fixtures.getAlbum();
          
         /**
+        * @desc Volume object 
+        * @type {Object}
+        */
+        SongPlayer.volume = null;
+         
+        /**
         * @function play
         * @desc Plays song by calling setSong and playSong functions
         * @param {Object} song
@@ -155,6 +161,18 @@
          SongPlayer.setCurrentTime = function(time) {
              if (currentBuzzObject) {
                  currentBuzzObject.setTime(time);
+             }
+         };
+         
+         /**
+         * @function setVolume
+         * @desc Set volume of currently playing song
+         * @param {Number} volume
+         */
+         SongPlayer.setVolume = function(volume) {
+             if (currentBuzzObject) {
+                 currentBuzzObject.setVolume(volume);
+                 console.log(volume);
              }
          };
 

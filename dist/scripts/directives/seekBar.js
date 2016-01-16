@@ -39,15 +39,18 @@
              scope.fillStyle = function() {
                  return {width: percentString()};
              };
+                 
              scope.thumbStyle = function() {
                  return {left: percentString()};
              };
              
              scope.onClickSeekBar = function(event) {
-             var percent = calculatePercent(seekBar, event);
-             scope.value = percent * scope.max;
-            notifyOnChange(scope.value);
-         };
+                 var percent = calculatePercent(seekBar, event);
+                 scope.value = percent * scope.max;
+                 notifyOnChange(scope.value);
+             };
+                 
+                 
              scope.trackThumb = function() {
                  $document.bind('mousemove.thumb', function(event) {
                      var percent = calculatePercent(seekBar, event);
@@ -61,14 +64,15 @@
                      $document.unbind('mouseup.thumb');
                  });
              };
-                 var notifyOnChange = function(newValue) {
-                     if (typeof scope.onChange === 'function') {
-                         scope.onChange({value: newValue});
-                     }
-                 };
+            
+             var notifyOnChange = function(newValue) {
+                 if (typeof scope.onChange === 'function') {
+                     scope.onChange({value: newValue});
+                 }
+             };
          }
      };
-     }
+    }
     
  
      angular
